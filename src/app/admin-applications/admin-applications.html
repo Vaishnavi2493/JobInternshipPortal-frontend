@@ -1,0 +1,43 @@
+<h2>All Applications</h2>
+
+<button (click)="getApplications()">View All Applications</button>
+
+<hr>
+
+<div *ngFor="let application of applications">
+
+  <h3>Application</h3>
+
+  <p>
+    <b>User ID:</b> {{ application.userId }}
+  </p>
+
+  <p>
+    <b>Job Title:</b> {{ application.jobTitle }}
+  </p>
+
+  <p>
+    <b>Company:</b> {{ application.company }}
+  </p>
+
+  <p>
+    <b>Location:</b> {{ application.location }}
+  </p>
+
+  <p>
+    <b>Status:</b> {{application.status}}
+  </p>
+
+  <select [(ngModel)]="application.status">
+    <option value="APPLIED">APPLIED</option>
+    <option value="SHORTLISTED">SHORTLISTED</option>
+    <option value="REJECTED">REJECTED</option>
+  </select>
+
+  <button (click)="updateStatus(application.id,application.status)">
+    Update Status
+  </button>
+
+  <hr>
+
+</div>

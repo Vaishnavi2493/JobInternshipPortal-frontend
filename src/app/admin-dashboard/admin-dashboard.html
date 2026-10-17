@@ -1,0 +1,140 @@
+<div class="dashboard-page">
+
+  <!-- ================= NAVBAR ================= -->
+
+  <nav class="navbar">
+
+    <div class="brand-section">
+      <span class="brand-icon">JP</span>
+      <span class="logo">Job Portal</span>
+    </div>
+
+    <div class="nav-right">
+
+      <span class="admin-label">
+        Admin Panel
+      </span>
+
+      <button
+        type="button"
+        class="logout-btn"
+        (click)="logout()">
+        Logout
+      </button>
+
+    </div>
+
+  </nav>
+
+
+  <!-- ================= MAIN ================= -->
+
+  <main class="container">
+
+    <!-- Welcome -->
+
+    <section class="welcome-section">
+
+      <p class="page-label">
+        ADMIN DASHBOARD
+      </p>
+
+      <h1>
+        Welcome back, Admin
+      </h1>
+
+      <p class="welcome-text">
+        Manage jobs and monitor applications from one place.
+      </p>
+
+    </section>
+
+
+    <!-- ================= ACTION CARDS ================= -->
+
+    <section class="dashboard-grid">
+
+
+      <!-- Manage Jobs -->
+
+      <div class="dashboard-card">
+
+        <div class="card-icon jobs-icon">
+          JD
+        </div>
+
+        <h2>
+          Manage Jobs
+        </h2>
+
+        <p>
+          Add new jobs, edit existing opportunities,
+          and remove jobs that are no longer available.
+        </p>
+
+        <button
+          type="button"
+          routerLink="/admin-jobs"
+          class="card-btn">
+          Manage Jobs
+        </button>
+
+      </div>
+
+
+      <!-- Applications -->
+
+      <div class="dashboard-card">
+
+        <div class="card-icon applications-icon">
+          AP
+        </div>
+
+        <h2>
+          Applications
+        </h2>
+
+        <p>
+          Review candidate applications and manage
+          application status from the applications page.
+        </p>
+
+        <button
+          type="button"
+          routerLink="/applications"
+          class="card-btn">
+          View Applications
+        </button>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= INFO SECTION ================= -->
+
+    <section class="info-panel">
+
+      <div class="info-content">
+
+        <h2>
+          Admin Control Center
+        </h2>
+
+        <p>
+          Keep job opportunities up to date and manage
+          applications efficiently through the portal.
+        </p>
+
+      </div>
+
+      <div class="info-status">
+        <span class="status-dot"></span>
+        System Active
+      </div>
+
+    </section>
+
+  </main>
+
+</div>

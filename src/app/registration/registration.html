@@ -1,0 +1,193 @@
+<div class="registration-page">
+
+  <div class="registration-card">
+
+    <!-- ================= LEFT SIDE ================= -->
+
+    <div class="info-section">
+
+      <div class="brand">
+        Job Portal
+      </div>
+
+      <h1>
+        Start Your Career
+        Journey
+      </h1>
+
+      <p class="info-description">
+        Create your account and discover job opportunities
+        that match your skills and career goals.
+      </p>
+
+
+      <div class="feature">
+
+        <span class="check">✓</span>
+
+        <div>
+          <h3>Discover Opportunities</h3>
+          <p>Explore jobs from different companies and locations.</p>
+        </div>
+
+      </div>
+
+
+      <div class="feature">
+
+        <span class="check">✓</span>
+
+        <div>
+          <h3>Apply Easily</h3>
+          <p>Submit applications and manage your job search.</p>
+        </div>
+
+      </div>
+
+
+      <div class="feature">
+
+        <span class="check">✓</span>
+
+        <div>
+          <h3>Track Applications</h3>
+          <p>Stay updated with the progress of your applications.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================= RIGHT SIDE ================= -->
+
+    <div class="registration-section">
+
+      <div class="registration-content">
+
+        <h2>Create Account</h2>
+
+        <p class="subtitle">
+          Register to start exploring opportunities.
+        </p>
+
+
+        <form (ngSubmit)="registerUser()">
+
+          <!-- Name -->
+
+          <div class="form-group">
+
+            <label for="name">
+              Full Name
+            </label>
+
+            <input
+              id="name"
+              type="text"
+              name="name"
+              [(ngModel)]="name"
+              placeholder="Enter your full name"
+              required>
+
+          </div>
+
+
+          <!-- Email -->
+
+          <div class="form-group">
+
+            <label for="email">
+              Email Address
+            </label>
+
+            <input
+              id="email"
+              type="email"
+              name="email"
+              [(ngModel)]="email"
+              placeholder="Enter your email"
+              autocomplete="email"
+              required>
+
+          </div>
+
+
+          <!-- Password -->
+
+          <div class="form-group">
+
+            <label for="password">
+              Password
+            </label>
+
+            <input
+              id="password"
+              type="password"
+              name="password"
+              [(ngModel)]="password"
+              placeholder="Create a password"
+              autocomplete="new-password"
+              required>
+
+          </div>
+
+
+          <!-- Confirm Password -->
+
+          <div class="form-group">
+
+            <label for="confirmPassword">
+              Confirm Password
+            </label>
+
+            <input
+              id="confirmPassword"
+              type="password"
+              name="confirmPassword"
+              [(ngModel)]="confirmPassword"
+              placeholder="Confirm your password"
+              autocomplete="new-password"
+              required>
+
+          </div>
+
+
+          <!-- Register -->
+
+          <button
+            type="submit"
+            class="register-btn">
+            Create Account
+          </button>
+
+
+          <!-- Message -->
+
+          <p
+            class="message"
+            [class.error]="message.includes('Failed') || message.includes('match') || message.includes('fill')"
+            [class.success]="message.includes('Successful')">
+            {{ message }}
+          </p>
+
+
+          <!-- Login -->
+
+          <p class="login-link">
+            Already have an account?
+
+            <a routerLink="/login">
+              Login
+            </a>
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

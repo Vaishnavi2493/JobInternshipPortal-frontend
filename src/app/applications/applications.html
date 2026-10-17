@@ -1,0 +1,72 @@
+<div class="applications-page">
+
+  <!-- Header -->
+  <div class="header">
+
+    <div>
+      <h1>My Applications</h1>
+      <p>Track the jobs you have applied for.</p>
+    </div>
+
+    <div class="total-box">
+      <span>Total Applications</span>
+      <strong>{{ applications.length }}</strong>
+    </div>
+
+  </div>
+
+
+  <!-- Applications -->
+  <div class="applications-container">
+
+    <div
+      class="application-card"
+      *ngFor="let application of applications">
+
+      <div class="card-header">
+
+        <h2>{{ application.jobTitle }}</h2>
+
+        <span
+          class="status"
+          [class.applied]="application.status === 'APPLIED'"
+          [class.shortlisted]="application.status === 'SHORTLISTED'"
+          [class.rejected]="application.status === 'REJECTED'">
+          {{ application.status }}
+        </span>
+
+      </div>
+
+      <div class="details">
+
+        <p>
+          <b>Company</b>
+          <span>{{ application.company }}</span>
+        </p>
+
+        <p>
+          <b>Location</b>
+          <span>{{ application.location }}</span>
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- No Applications -->
+  <div
+    class="no-applications"
+    *ngIf="applications.length === 0">
+
+    <h2>No Applications Yet</h2>
+
+    <p>
+      You haven't applied for any jobs yet.
+    </p>
+
+  </div>
+
+</div>

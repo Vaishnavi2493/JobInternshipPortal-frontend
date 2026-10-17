@@ -1,0 +1,137 @@
+<div class="login-page">
+
+  <div class="login-card">
+
+    <!-- LEFT : JOB INFORMATION -->
+    <div class="info-section">
+
+      <div class="brand">
+        Job Portal
+      </div>
+
+      <h1>
+        Find the Right
+        Opportunity for You
+      </h1>
+
+      <p class="info-description">
+        Discover jobs, apply for opportunities and
+        manage your applications from one simple platform.
+      </p>
+
+      <div class="feature">
+
+        <span class="check">✓</span>
+
+        <div>
+          <h3>Explore Jobs</h3>
+          <p>Find opportunities based on your skills and interests.</p>
+        </div>
+
+      </div>
+
+      <div class="feature">
+
+        <span class="check">✓</span>
+
+        <div>
+          <h3>Easy Applications</h3>
+          <p>Apply to jobs quickly and manage your applications.</p>
+        </div>
+
+      </div>
+
+      <div class="feature">
+
+        <span class="check">✓</span>
+
+        <div>
+          <h3>Track Progress</h3>
+          <p>Stay updated with your application status.</p>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- RIGHT : LOGIN -->
+    <div class="login-section">
+
+      <div class="login-content">
+
+        <h2>Welcome Back</h2>
+
+        <p class="subtitle">
+          Sign in to continue to your account.
+        </p>
+
+        <form (ngSubmit)="loginUser()">
+
+          <div class="form-group">
+
+            <label for="email">
+              Email Address
+            </label>
+
+            <input
+              id="email"
+              type="email"
+              name="email"
+              [(ngModel)]="email"
+              placeholder="Enter your email"
+              autocomplete="email"
+              required>
+
+          </div>
+
+
+          <div class="form-group">
+
+            <label for="password">
+              Password
+            </label>
+
+            <input
+              id="password"
+              type="password"
+              name="password"
+              [(ngModel)]="password"
+              placeholder="Enter your password"
+              autocomplete="current-password"
+              required>
+
+          </div>
+
+
+          <button
+            type="submit"
+            class="login-btn">
+            Login
+          </button>
+
+
+          <p
+            class="message"
+            [class.error]="message.includes('Invalid') || message.includes('Please')"
+            [class.success]="message.includes('Successful')">
+            {{ message }}
+          </p>
+
+
+          <p class="register-link">
+            Don't have an account?
+            <a routerLink="/register">
+              Register
+            </a>
+          </p>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

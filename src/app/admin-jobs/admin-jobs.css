@@ -1,0 +1,449 @@
+* {
+  box-sizing: border-box;
+}
+
+.admin-jobs-page {
+  min-height: 100vh;
+  background: #f5f7fb;
+  font-family: Arial, sans-serif;
+}
+
+
+/* ================= NAVBAR ================= */
+
+.navbar {
+  height: 70px;
+
+  background: #1f2937;
+  color: white;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 40px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.dashboard-btn {
+  border: none;
+
+  padding: 10px 18px;
+
+  background: white;
+  color: #1f2937;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+}
+
+
+/* ================= MAIN CONTAINER ================= */
+
+.container {
+  width: 90%;
+  max-width: 1100px;
+
+  margin: auto;
+
+  padding: 40px 0;
+}
+
+
+/* ================= FORM CARD ================= */
+
+.job-form-card {
+  background: white;
+
+  padding: 30px;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.08);
+
+  margin-bottom: 40px;
+}
+
+.job-form-card h1 {
+  margin-top: 0;
+
+  margin-bottom: 25px;
+
+  color: #1f2937;
+}
+
+.editing-text {
+  color: #6b7280;
+
+  margin-bottom: 20px;
+
+  font-size: 14px;
+}
+
+
+/* ================= FORM GRID ================= */
+
+.form-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, 1fr);
+
+  gap: 15px;
+}
+
+.form-grid input,
+textarea {
+  width: 100%;
+
+  padding: 12px 14px;
+
+  border: 1px solid #d1d5db;
+
+  border-radius: 6px;
+
+  font-size: 14px;
+
+  outline: none;
+
+  background: white;
+}
+
+.form-grid input:focus,
+textarea:focus {
+  border-color: #2563eb;
+}
+
+textarea {
+  margin-top: 15px;
+
+  min-height: 120px;
+
+  resize: vertical;
+}
+
+
+/* ================= FORM BUTTONS ================= */
+
+.add-btn,
+.save-btn,
+.cancel-btn {
+  border: none;
+
+  padding: 11px 22px;
+
+  border-radius: 6px;
+
+  margin-top: 15px;
+
+  font-size: 14px;
+
+  font-weight: bold;
+
+  cursor: pointer;
+
+  position: relative;
+
+  z-index: 10;
+
+  pointer-events: auto;
+}
+
+
+/* Add */
+
+.add-btn {
+  background: #16a34a;
+  color: white;
+}
+
+.add-btn:hover {
+  background: #15803d;
+}
+
+
+/* Save Changes */
+
+.save-btn {
+  background: #2563eb;
+  color: white;
+}
+
+.save-btn:hover {
+  background: #1d4ed8;
+}
+
+
+/* Cancel */
+
+.cancel-btn {
+  background: #6b7280;
+  color: white;
+
+  margin-left: 10px;
+}
+
+.cancel-btn:hover {
+  background: #4b5563;
+}
+
+
+/* ================= EDIT BUTTON AREA ================= */
+
+.edit-buttons {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 10px;
+
+  position: relative;
+
+  z-index: 10;
+}
+
+
+/* ================= JOBS SECTION ================= */
+
+.jobs-section {
+  position: relative;
+}
+
+.section-header {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 20px;
+}
+
+.section-header h2 {
+  margin: 0;
+
+  color: #1f2937;
+}
+
+.job-count {
+  margin-top: 5px;
+
+  color: #6b7280;
+
+  font-size: 14px;
+}
+
+.refresh-btn {
+  border: none;
+
+  padding: 10px 18px;
+
+  background: #2563eb;
+  color: white;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+}
+
+.refresh-btn:hover {
+  background: #1d4ed8;
+}
+
+
+/* ================= JOBS GRID ================= */
+
+.jobs-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(auto-fit, minmax(300px, 1fr));
+
+  gap: 20px;
+}
+
+
+/* ================= JOB CARD ================= */
+
+.job-card {
+  background: white;
+
+  padding: 25px;
+
+  border-radius: 10px;
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.08);
+
+  transition: transform 0.2s;
+}
+
+.job-card:hover {
+  transform: translateY(-4px);
+}
+
+.job-header {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: flex-start;
+
+  gap: 10px;
+
+  margin-bottom: 15px;
+}
+
+.job-header h3 {
+  margin: 0;
+
+  color: #1f2937;
+
+  font-size: 20px;
+}
+
+.job-id {
+  font-size: 12px;
+
+  color: #6b7280;
+
+  white-space: nowrap;
+}
+
+.job-card p {
+  color: #4b5563;
+
+  margin: 10px 0;
+}
+
+.description {
+  line-height: 1.6;
+
+  min-height: 60px;
+}
+
+
+/* ================= JOB ACTIONS ================= */
+
+.job-actions {
+  display: flex;
+
+  gap: 10px;
+
+  margin-top: 20px;
+}
+
+.edit-btn,
+.delete-btn {
+  flex: 1;
+
+  border: none;
+
+  padding: 10px;
+
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-weight: bold;
+
+  position: relative;
+
+  z-index: 10;
+
+  pointer-events: auto;
+}
+
+.edit-btn {
+  background: #f59e0b;
+  color: white;
+}
+
+.delete-btn {
+  background: #dc2626;
+  color: white;
+}
+
+.edit-btn:hover {
+  background: #d97706;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+}
+
+
+/* ================= NO JOBS ================= */
+
+.no-jobs {
+  background: white;
+
+  padding: 40px;
+
+  border-radius: 10px;
+
+  text-align: center;
+
+  box-shadow:
+    0 3px 12px rgba(0, 0, 0, 0.08);
+
+  grid-column: 1 / -1;
+}
+
+.no-jobs h3 {
+  color: #1f2937;
+}
+
+.no-jobs p {
+  color: #6b7280;
+}
+
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 650px) {
+
+  .navbar {
+    padding: 0 20px;
+  }
+
+  .logo {
+    font-size: 20px;
+  }
+
+  .container {
+    width: 94%;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .section-header {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 12px;
+  }
+
+  .refresh-btn {
+    width: 100%;
+  }
+
+  .edit-buttons {
+    flex-direction: column;
+  }
+
+  .cancel-btn {
+    margin-left: 0;
+  }
+
+}

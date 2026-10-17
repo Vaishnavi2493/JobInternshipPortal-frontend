@@ -1,0 +1,245 @@
+<div class="admin-jobs-page">
+
+  <!-- ================= NAVBAR ================= -->
+
+  <nav class="navbar">
+
+
+<div class="logo">
+  Manage Jobs
+</div>
+
+<button
+  type="button"
+  class="dashboard-btn"
+  routerLink="/admin-dashboard">
+  Back to Dashboard
+</button>
+
+
+  </nav>
+
+  <div class="container">
+
+
+<!-- ================= ADD JOB ================= -->
+
+<div
+  class="job-form-card"
+  *ngIf="!isEditing">
+
+  <h1>Add New Job</h1>
+
+  <div class="form-grid">
+
+    <input
+      type="text"
+      [(ngModel)]="newJob.title"
+      placeholder="Job Title">
+
+    <input
+      type="text"
+      [(ngModel)]="newJob.company"
+      placeholder="Company">
+
+    <input
+      type="text"
+      [(ngModel)]="newJob.location"
+      placeholder="Location">
+
+    <input
+      type="number"
+      [(ngModel)]="newJob.salary"
+      placeholder="Salary">
+
+  </div>
+
+  <textarea
+    [(ngModel)]="newJob.description"
+    placeholder="Job Description">
+  </textarea>
+
+  <button
+    type="button"
+    class="add-btn"
+    (click)="addJob()">
+    Add Job
+  </button>
+
+</div>
+
+
+<!-- ================= EDIT JOB ================= -->
+
+<div
+  class="job-form-card"
+  *ngIf="isEditing">
+
+  <h1>Edit Job</h1>
+
+  <p class="editing-text">
+    Editing Job ID: {{ editingJob.id }}
+  </p>
+
+  <div class="form-grid">
+
+    <input
+      type="text"
+      [(ngModel)]="editingJob.title"
+      placeholder="Job Title">
+
+    <input
+      type="text"
+      [(ngModel)]="editingJob.company"
+      placeholder="Company">
+
+    <input
+      type="text"
+      [(ngModel)]="editingJob.location"
+      placeholder="Location">
+
+    <input
+      type="number"
+      [(ngModel)]="editingJob.salary"
+      placeholder="Salary">
+
+  </div>
+
+  <textarea
+    [(ngModel)]="editingJob.description"
+    placeholder="Job Description">
+  </textarea>
+
+  <div class="edit-buttons">
+
+    <button
+      type="button"
+      class="save-btn"
+      (click)="saveEditedJob()">
+      Save Changes
+    </button>
+
+    <button
+      type="button"
+      class="cancel-btn"
+      (click)="cancelEdit()">
+      Cancel
+    </button>
+
+  </div>
+
+</div>
+
+
+<!-- ================= JOB LIST ================= -->
+
+<div class="jobs-section">
+
+  <div class="section-header">
+
+    <div>
+
+      <h2>Available Jobs</h2>
+
+      <p class="job-count">
+        Total Jobs: {{ jobs.length }}
+      </p>
+
+    </div>
+
+    <button
+      type="button"
+      class="refresh-btn"
+      (click)="getJobs()">
+      Refresh Jobs
+    </button>
+
+  </div>
+
+
+  <div class="jobs-grid">
+
+
+    <!-- JOB CARD -->
+
+    <div
+      class="job-card"
+      *ngFor="let job of jobs">
+
+      <div class="job-header">
+
+        <h3>
+          {{ job.title }}
+        </h3>
+
+        <span class="job-id">
+          ID: {{ job.id }}
+        </span>
+
+      </div>
+
+      <p>
+        <b>Company:</b>
+        {{ job.company }}
+      </p>
+
+      <p>
+        <b>Location:</b>
+        {{ job.location }}
+      </p>
+
+      <p>
+        <b>Salary:</b>
+        {{ job.salary }}
+      </p>
+
+      <p class="description">
+        {{ job.description }}
+      </p>
+
+
+      <!-- ACTION BUTTONS -->
+
+      <div class="job-actions">
+
+        <button
+          type="button"
+          class="edit-btn"
+          (click)="editJob(job)">
+          Edit
+        </button>
+
+        <button
+          type="button"
+          class="delete-btn"
+          (click)="deleteJob(job.id)">
+          Delete
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <!-- NO JOBS -->
+
+    <div
+      class="no-jobs"
+      *ngIf="jobs.length === 0">
+
+      <h3>No Jobs Available</h3>
+
+      <p>
+        Add a new job using the form above.
+      </p>
+
+    </div>
+
+  </div>
+
+</div>
+
+
+  </div>
+
+</div>

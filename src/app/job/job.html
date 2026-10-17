@@ -1,0 +1,107 @@
+<div class="job-page">
+
+  <!-- Navbar -->
+  <nav class="navbar">
+
+    <div class="logo">
+      Job Portal
+    </div>
+
+    <div class="nav-buttons">
+
+      <button
+        routerLink="/applications"
+        class="nav-btn">
+        My Applications
+      </button>
+
+      <button
+        (click)="logout()"
+        class="logout-btn">
+        Logout
+      </button>
+
+    </div>
+
+  </nav>
+
+
+  <!-- Main Content -->
+  <div class="container">
+
+    <!-- Welcome Section -->
+    <div class="welcome-section">
+
+      <h1>Find Your Dream Job</h1>
+
+      <p>
+        Search and apply for jobs that match your skills and interests.
+      </p>
+
+    </div>
+
+
+    <!-- Search Section -->
+    <div class="search-box">
+
+      <input
+        type="text"
+        [(ngModel)]="searchTitle"
+        placeholder="Search job by title">
+
+      <button
+        (click)="searchJobs()"
+        class="search-btn">
+        Search
+      </button>
+
+      <button
+        (click)="getJobs()"
+        class="all-jobs-btn">
+        All Jobs
+      </button>
+
+    </div>
+
+
+    <!-- Jobs -->
+    <div class="jobs-container">
+
+      <div
+        class="job-card"
+        *ngFor="let job of jobs">
+
+        <h2>{{ job.title }}</h2>
+
+        <p>
+          <b>Company:</b>
+          {{ job.company }}
+        </p>
+
+        <p>
+          <b>Location:</b>
+          {{ job.location }}
+        </p>
+
+        <p>
+          <b>Salary:</b>
+          {{ job.salary }}
+        </p>
+
+        <p class="description">
+          {{ job.description }}
+        </p>
+
+        <button
+          (click)="applyJob(job.id)"
+          class="apply-btn">
+          Apply Now
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
