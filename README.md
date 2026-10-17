@@ -1,59 +1,95 @@
-# JobInternshipPortalFrontend
+# Job Internship Portal — Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.12.
+An Angular-based frontend for a full-stack Job Internship Portal. The application allows job seekers to explore job opportunities, apply for jobs, and track their applications, while administrators can manage jobs and applications.
 
-## Development server
+## Features
 
-To start a local development server, run:
+- User registration and login
+- JWT-based authentication integration
+- Role-based access for Admin and Job Seeker
+- Job listing and search
+- Job application workflow
+- My Applications page
+- Application status tracking
+- Admin Dashboard
+- Add, edit, and delete job opportunities
+- Responsive user interface
 
-```bash
-ng serve
+## Tech Stack
+
+- Angular
+- TypeScript
+- HTML
+- CSS
+- Angular Router
+- Angular Forms
+- HttpClient
+- REST API integration
+
+## Project Structure
+
+```text
+src/
+└── app/
+    ├── admin-applications/
+    ├── admin-dashboard/
+    ├── admin-jobs/
+    ├── applications/
+    ├── job/
+    ├── login/
+    └── registration/
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Backend
 
-## Code scaffolding
+This frontend communicates with the Spring Boot backend through REST APIs.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+**Backend Repository:**  
+https://github.com/Vaishnavi2493/JobInternshipPortal-backend
 
-```bash
-ng generate component component-name
-```
+The backend is configured locally at `http://localhost:8080`.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Run Locally
 
-```bash
-ng generate --help
-```
+### Prerequisites
 
-## Building
+- Node.js and npm
+- Angular CLI
+- MySQL database
+- Job Internship Portal backend
 
-To build the project run:
+### Installation
 
-```bash
-ng build
-```
+1. Clone this repository.
+2. Open a terminal in the project folder.
+3. Install dependencies:
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+   ```bash
+   npm install
+   ```
 
-## Running unit tests
+4. Start the Angular development server:
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+   ```bash
+   ng serve
+   ```
 
-```bash
-ng test
-```
+5. Open `http://localhost:4200` in your browser.
 
-## Running end-to-end tests
+Ensure the Spring Boot backend and MySQL database are configured and running for API-dependent features.
 
-For end-to-end (e2e) testing, run:
+## Backend Repository
 
-```bash
-ng e2e
-```
+[Job Internship Portal — Backend](https://github.com/Vaishnavi2493/JobInternshipPortal-backend)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Future Enhancements
 
-## Additional Resources
+- Resume upload
+- Advanced job filtering
+- Email notifications
+- AI-powered career assistance
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+---
+
+**Project:** Job Internship Portal  
+**Purpose:** Full-Stack Web Development
