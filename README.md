@@ -47,7 +47,7 @@ This frontend communicates with the Spring Boot backend through REST APIs.
 **Backend Repository:**  
 https://github.com/Vaishnavi2493/JobInternshipPortal-backend
 
-The backend is configured locally at `http://localhost:8080`.
+The backend is configured locally at `https://jobinternshipportal-backend.onrender.com`.
 
 ## Run Locally
 

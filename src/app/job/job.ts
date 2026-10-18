@@ -23,7 +23,7 @@ export class Job {
 
   getJobs() {
 
-    this.http.get<any[]>('http://localhost:8080/jobs')
+    this.http.get<any[]>('https://jobinternshipportal-backend.onrender.com/jobs')
       .subscribe({
         next: (data) => {
           this.jobs = data;
@@ -38,7 +38,7 @@ export class Job {
   searchJobs() {
 
     this.http.get<any[]>(
-      'http://localhost:8080/jobs/search?title=' + this.searchTitle
+      'https://jobinternshipportal-backend.onrender.com/jobs/search?title=' + this.searchTitle
     )
     .subscribe({
       next: (data) => {
@@ -58,7 +58,7 @@ export class Job {
     };
 
     this.http.post(
-      'http://localhost:8080/applications',
+      'https://jobinternshipportal-backend.onrender.com/applications',
       application
     ).subscribe({
 

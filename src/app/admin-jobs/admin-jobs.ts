@@ -51,7 +51,7 @@ export class AdminJobs {
   getJobs() {
 
     this.http.get<any[]>(
-      'http://localhost:8080/jobs'
+      'https://jobinternshipportal-backend.onrender.com/jobs'
     ).subscribe({
 
       next: (data) => {
@@ -78,7 +78,7 @@ export class AdminJobs {
   addJob() {
 
     this.http.post(
-      'http://localhost:8080/jobs',
+      'https://jobinternshipportal-backend.onrender.com/jobs',
       this.newJob
     ).subscribe({
 
@@ -153,7 +153,7 @@ export class AdminJobs {
     console.log('Editing Job:', this.editingJob);
 
     this.http.put(
-      `http://localhost:8080/jobs/${this.editingJob.id}`,
+      `https://jobinternshipportal-backend.onrender.com/jobs/${this.editingJob.id}`,
       this.editingJob
     ).subscribe({
 
@@ -201,7 +201,7 @@ export class AdminJobs {
     if (confirm('Are you sure you want to delete this job?')) {
 
       this.http.delete(
-        `http://localhost:8080/jobs/${id}`,
+        `https://jobinternshipportal-backend.onrender.com/jobs/${id}`,
         {
           responseType: 'text'
         }

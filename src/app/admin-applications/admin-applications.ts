@@ -21,7 +21,7 @@ export class AdminApplications {
 
   getApplications() {
     this.http.get<any[]>(
-      'http://localhost:8080/applications'
+      'https://jobinternshipportal-backend.onrender.com/applications'
     ).subscribe({
 
       next: (data) => {
@@ -39,7 +39,7 @@ export class AdminApplications {
   updateStatus(id: number, status: string) {
 
     this.http.put(
-      `http://localhost:8080/applications/${id}/status?status=${status}`,
+      `https://jobinternshipportal-backend.onrender.com/applications/${id}/status?status=${status}`,
       {}
     ).subscribe({
 

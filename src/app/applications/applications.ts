@@ -24,7 +24,7 @@ export class Applications {
   getApplications() {
 
     this.http.get<any[]>(
-      'http://localhost:8080/applications/user'
+      'https://jobinternshipportal-backend.onrender.com/applications/user'
     ).subscribe({
 
       next: (data) => {

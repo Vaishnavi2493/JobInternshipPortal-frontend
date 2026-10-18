@@ -42,7 +42,7 @@ export class Registration {
     };
 
     this.http.post(
-      'http://localhost:8080/api/users/register',
+      'https://jobinternshipportal-backend.onrender.com/api/users/register',
       user
     ).subscribe({
 
