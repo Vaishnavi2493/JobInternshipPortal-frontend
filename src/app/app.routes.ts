@@ -12,38 +12,61 @@ import { roleGuard } from './role-guard';
 
 export const routes: Routes = [
 
-  { path: 'login', component: login },
+  // Default route: Open Login page
+  {
+    path: '',
+    redirectTo: 'login',
+    pathMatch: 'full'
+  },
 
-  { path: 'register', component: Registration },
+  // Login and Registration
+  {
+    path: 'login',
+    component: login
+  },
 
-  { 
+  {
+    path: 'register',
+    component: Registration
+  },
+
+  // Admin Dashboard
+  {
     path: 'admin-dashboard',
     component: AdminDashboard,
     canActivate: [authGuard, roleGuard]
   },
 
-  { 
+  // Job Seeker
+  {
     path: 'job',
     component: Job,
     canActivate: [authGuard]
   },
 
-  { 
+  {
     path: 'applications',
     component: Applications,
     canActivate: [authGuard]
   },
 
-  { 
+  // Admin
+  {
     path: 'admin-applications',
     component: AdminApplications,
     canActivate: [authGuard, roleGuard]
   },
 
-  { 
+  {
     path: 'admin-jobs',
     component: AdminJobs,
     canActivate: [authGuard, roleGuard]
+  },
+
+  // Unknown routes redirect to Login
+  {
+    path: '**',
+    redirectTo: 'login'
   }
 
 ];
